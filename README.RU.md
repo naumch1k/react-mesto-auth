@@ -2,7 +2,7 @@
 
 *Read this in other languages:* [EN](https://github.com/naumch1k/react-mesto-auth/blob/main/README.md) 
 
-[Проектная работа на GitHub Pages]()
+[Проектная работа на GitHub Pages](https://naumch1k.github.io/react-mesto-auth/)
 
 ## Описание проекта
 Учебный проект [Yandex Практикум](https://praktikum.yandex.ru/web/ "Курс Веб-разработчик") - интерактивная страница, где пользователи могут делиться фотографиями.
