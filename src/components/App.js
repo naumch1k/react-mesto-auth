@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import Main from './Main';
+import Login from './Login';
+import Register from './Register';
 import Footer from './Footer';
 import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup';
@@ -9,6 +12,8 @@ import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
 import api from '../utils/api';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
+import ProtectedRoute from './ProtectedRoute';
+import PageNotFound from './PageNotFound';
 
 
 function App() {
@@ -17,6 +22,8 @@ function App() {
     about: 'offline',
     avatar: '',
   });
+
+  const [loggedIn, setLoggedIn] = React.useState(false);
 
   const [isEditProfilePopupOpen, setEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setAddPlacePopupOpen] = useState(false);
@@ -152,16 +159,30 @@ function App() {
       <div className="page">
         <div className="page__container">
           <Header />
-          <Main
-            cards={cards}
-            onEditProfile={handleEditProfilePopupOpen}
-            onAddPlace={handleAddPlacePopupOpen}
-            onEditAvatar={handleEditAvatarPopupOpen}
-            onCardClick={handleCardClick}
-            onCardLike={handleCardLike}
-            onCardDelete={handleCardDelete}
-            isLoading={isLoading}
-          />
+          <Switch>
+            <ProtectedRoute
+              exact path="/"
+              loggedIn={loggedIn}
+              component={Main}
+              cards={cards}
+              onEditProfile={handleEditProfilePopupOpen}
+              onAddPlace={handleAddPlacePopupOpen}
+              onEditAvatar={handleEditAvatarPopupOpen}
+              onCardClick={handleCardClick}
+              onCardLike={handleCardLike}
+              onCardDelete={handleCardDelete}
+              isLoading={isLoading}
+            />
+            <Route path="/sign-up">
+              <Register />
+            </Route>
+            <Route path="/sign-in">
+              <Login />
+            </Route>
+            <Route path="*">
+              <PageNotFound />
+            </Route>
+          </Switch>
           <Footer />
           <EditProfilePopup 
             buttonText={profileSubmitButtonText}
