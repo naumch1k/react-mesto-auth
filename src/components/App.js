@@ -183,7 +183,7 @@ function App() {
               <PageNotFound />
             </Route>
           </Switch>
-          <Footer />
+          { loggedIn && <Footer /> }
           <EditProfilePopup 
             buttonText={profileSubmitButtonText}
             isOpen={isEditProfilePopupOpen}
