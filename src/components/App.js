@@ -10,6 +10,7 @@ import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
 import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
+import InfoTooltip from './InfoTooltip';
 import api from '../utils/api';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import ProtectedRoute from './ProtectedRoute';
@@ -28,6 +29,9 @@ function App() {
   const [isEditProfilePopupOpen, setEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setAddPlacePopupOpen] = useState(false);
   const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = useState(false);
+
+  const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = React.useState(false);
+  const [isSuccess, setIsSuccess] = React.useState(false);
 
   const [profileSubmitButtonText, setProfileSubmitButtonText] = useState('Сохранить');
   const [avatarSubmitButtonText, setAvatarSubmitButtonText] = useState('Сохранить');
@@ -152,6 +156,7 @@ function App() {
     setAddPlacePopupOpen(false);
     setEditAvatarPopupOpen(false);
     setSelectedCard(null);
+    setIsInfoTooltipPopupOpen(false);
   }
 
   return (
@@ -208,12 +213,17 @@ function App() {
             title="Вы уверены?"
             buttonText="Да"
           />
-           { selectedCard && 
+          { selectedCard && 
           <ImagePopup 
             card={selectedCard} 
             onClose={closeAllPopups}
-          /> 
-        }
+          />
+          }
+          <InfoTooltip
+            isOpen={isInfoTooltipPopupOpen}
+            isSuccess={isSuccess}
+            onClose={closeAllPopups}
+          />
         </div>
       </div>
     </CurrentUserContext.Provider>
