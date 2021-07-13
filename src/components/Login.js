@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Login() {
+function Login({ onLogin }) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    onLogin({
+      "password": password,
+      "email": email,
+    });
+  }
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  }
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  }
+
   return(
-    <form className="form form_theme_dark" name="login-form" noValidate>
+    <form onSubmit={handleSubmit} className="form form_theme_dark" name="login-form" noValidate>
       <h2 className="form__heading">Вход</h2>
       <fieldset className="form__items form__items_theme_dark">
         <input 
@@ -11,7 +31,8 @@ function Login() {
           type="email" 
           name="email" 
           placeholder="Email"
-          //value={email}
+          value={email}
+          onChange={handleEmailChange}
           required 
         />
         <p className="form__error" id="email-error"></p>
@@ -21,7 +42,8 @@ function Login() {
           type="password" 
           name="password" 
           placeholder="Пароль" 
-          //value={password}
+          value={password}
+          onChange={handlePasswordChange}
           required 
         />
         <p className="form__error" id="password-error"></p>

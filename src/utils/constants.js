@@ -1,3 +1,6 @@
+export const BASE_URL = 'https://auth.nomoreparties.co';
+export const ESCAPE_KEY = "Escape";
+
 export const formValidationSettings = {
   formSelector: '.form',
   inputSelector: '.form__item',
@@ -37,5 +40,3 @@ export const elementsListSelector = '.elements__list';
 export const profileSelector = ".profile";
 export const editFormInputNameSelector = ".form__item_el_name";
 export const editFormInputBioSelector = ".form__item_el_bio";
-
-export const ESCAPE_KEY = "Escape";
