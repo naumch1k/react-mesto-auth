@@ -88,17 +88,14 @@ function App() {
   
   const handleRegistration = (data) => {
     auth.register(data)
-      .then((res) => {
-        if (res) {
-          setIsSuccess(true);
-          setIsInfoTooltipPopupOpen(true);
-          history.push('/sign-in');
-        } else {
-          setIsSuccess(false);
-          setIsInfoTooltipPopupOpen(true);
-        }
+      .then(() => {
+        setIsSuccess(true);
+        setIsInfoTooltipPopupOpen(true);
+        history.push('/sign-in');
       })
       .catch((err) => {
+        setIsSuccess(false);
+        setIsInfoTooltipPopupOpen(true);
         console.log(`Unable to register. ${err}`);
       })
   }
@@ -112,6 +109,8 @@ function App() {
         history.push('/');
       })
       .catch((err) => {
+        setIsSuccess(false);
+        setIsInfoTooltipPopupOpen(true);
         console.log(`Unable to login. ${err}`);
       })
   }
