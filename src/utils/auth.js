@@ -1,5 +1,12 @@
 import { BASE_URL } from './constants';
 
+const handleResponse = (res) => {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Error: ${res.status}`);
+}
+
 export const register = ({password, email}) => {
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
@@ -11,23 +18,12 @@ export const register = ({password, email}) => {
       email
     })
   })
-  .then((res) => {
-    try {
-      if (res.ok) {
-        return res.json();
-      }
-    } catch(e) {
-      return (e)
-    }
-  })
-  .then((res) => {
-    return res;
-  })
-  .catch((err) => console.log(err));
+    .then((res) => handleResponse(res));
 }
 
 export const authorize = ({password, email}) => {
   return fetch(`${BASE_URL}/signin`, {
+    mode: "no-cors",
     method: 'POST',
     headers: {
       "Content-Type": "application/json" 
@@ -37,13 +33,7 @@ export const authorize = ({password, email}) => {
       email
     })
   })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      } else {
-        console.log(`Server responded with status: ${res.status} ${res.statusText}`)
-      }
-    })
+    .then((res) => handleResponse(res));
 }
 
 export const checkToken = (token) => {
@@ -54,11 +44,5 @@ export const checkToken = (token) => {
       Authorization: `Bearer ${token}`
     }
   })
-  .then((res) => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      console.log(`Server responded with status: ${res.status} ${res.statusText}`)
-    }
-  })
+    .then((res) => handleResponse(res));
 }

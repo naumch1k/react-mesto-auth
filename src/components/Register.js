@@ -23,7 +23,7 @@ function Register({ onRegistration }) {
   }
 
   return(
-    <form onSubmit={handleSubmit} className="form form_theme_dark" name="signup-form" noValidate>
+    <form onSubmit={handleSubmit} className="form form_theme_dark" name="signup-form">
       <h2 className="form__heading">Регистрация</h2>
       <fieldset className="form__items form__items_theme_dark">
         <input 
