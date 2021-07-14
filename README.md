@@ -5,9 +5,10 @@
 [GitHub Pages Link](https://naumch1k.github.io/react-mesto-auth/)
 
 ## Description
-"Mesto" is a portfolio project created as a part of a study at [Yandex.Practicum](https://practicum.yandex.com/web/ "Web Development Program") - online photo-sharing application with user login and authentication features added.
+"Mesto" is a portfolio project created as a part of a study at [Yandex.Practicum](https://practicum.yandex.com/web/ "Web Development Program") - online photo-sharing application with __user login and authentication__ features added.
 
 ### Functionality
+* User authorization and registration
 * Change user avatar
 * Edit user profile
 * Add and remove pics
@@ -25,6 +26,6 @@
 * JSX
 
 ## TO DO
-* User authorization and registration
+* Mobile layout for Login and Register components; hamburger menu for the main page
 * Close popups with esc/overlay click
 * Live form validation
