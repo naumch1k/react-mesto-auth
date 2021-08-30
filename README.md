@@ -27,5 +27,5 @@
 
 ## TO DO
 * Hamburger menu for the main page
-* Close popups with esc/overlay click
+* Close popups with overlay click
 * Live form validation
