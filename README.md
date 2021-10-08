@@ -7,6 +7,10 @@
 ## Description
 "Mesto" is a portfolio project created as a part of a study at [Yandex.Practicum](https://practicum.yandex.com/web/ "Web Development Program") - online photo-sharing application with __user login and authentication__ features added.
 
+You are more than welcome to register yourself, or can just use   
+login: *test@test.com*  
+password: *testtest*
+
 ### Functionality
 * User authorization and registration
 * Change user avatar
@@ -48,6 +52,7 @@ In the project directory, you can run:
 
 ## TO DO
 - [ ] Hamburger menu for the main page
+- [x] Close popups with ESC
 - [ ] Close popups with overlay click
 - [ ] Live form validation
 
