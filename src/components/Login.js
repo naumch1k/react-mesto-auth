@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState('');
@@ -23,7 +24,7 @@ function Login({ onLogin }) {
 
   return(
     <form onSubmit={handleSubmit} className="form form_theme_dark" name="login-form">
-      <h2 className="form__heading form__heading_theme_dark">Sign in</h2>
+      <h2 className="form__heading form__heading_theme_dark">Log in</h2>
       <fieldset className="form__items form__items_theme_dark">
         <input 
           className="form__item form__item_theme_dark form__item_el_email"
@@ -48,7 +49,11 @@ function Login({ onLogin }) {
         />
         <p className="form__error" id="password-error"></p>
       </fieldset>
-      <button className="form__submit-btn form__submit-btn_theme_dark" type="submit">Sign in</button>
+      <button className="form__submit-btn form__submit-btn_theme_dark" type="submit">Log in</button>
+      <p className="form__text">
+        Not a member yet?
+        <Link to="/sign-up" className="form__link"> Sign up here!</Link>
+      </p>
     </form>
   );
 }

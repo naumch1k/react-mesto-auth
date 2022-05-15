@@ -20,7 +20,7 @@ function Header({ loggedIn, userEmail, onSignOut }) {
           {location.pathname === '/sign-up' &&
             (
               <Link className="header__navlink" to="/sign-in">
-                Sign in
+                Log in
               </Link>
             )
           }
