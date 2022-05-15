@@ -1,11 +1,11 @@
-# Portfolio project: "Mesto" (React JS App) with User Login and Authentication
+# Portfolio project: "Around the U.S." (React JS App) with User Login and Authentication
 
 *Read this in other languages:* [RU](https://github.com/naumch1k/react-mesto-auth/blob/main/README.RU.md) 
 
 [GitHub Pages Link](https://naumch1k.github.io/react-mesto-auth/)
 
 ## Description
-"Mesto" is a portfolio project created as a part of a study at [Yandex.Practicum](https://practicum.yandex.com/web/ "Web Development Program") - online photo-sharing application with __user login and authentication__ features added.
+"Around the U.S." is a portfolio project created as a part of a study at [Yandex.Practicum](https://practicum.yandex.com/web/ "Web Development Program") - online photo-sharing application with __user login and authentication__ features added.
 
 You are more than welcome to register yourself, or can just use   
 login: *test@test.com*  
